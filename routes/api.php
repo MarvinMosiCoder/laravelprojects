@@ -17,3 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//List client
+Route::get('clients', 'ClientController@index');
+
+//List single client
+Route::get('clients/{id}', 'ClientController@show');
+
+//List new client
+Route::post('clients', 'ClientController@store');
+
+//List update client
+Route::put('clients', 'ClientController@store');
+
+//List delete client
+Route::delete('clients', 'ClientController@destroy');
